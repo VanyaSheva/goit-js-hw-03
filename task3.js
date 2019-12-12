@@ -1,12 +1,11 @@
 const findBestEmployee = employees => {
-  const arrOfValues = Object.values(employees);
-  const arrOfNames = Object.keys(employees);
+    const arr = Object.entries(employees);
   let result = 0;
   let name;
-  for (let i = 0; i < arrOfValues.length; i++) {
-    if (arrOfValues[i] > result) {
-      result = arrOfValues[i];
-      name = arrOfNames[i];
+  for (let [key, value] of arr) {
+    if ([value] > result) {
+      result = value;
+      name = [key];
     }
   }
   return `The best employee is: ${name}, and the result is:  ${result}, congratulations! `;

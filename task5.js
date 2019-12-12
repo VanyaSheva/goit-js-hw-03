@@ -7,12 +7,12 @@ const products = [
 
 const getAllPropValues = (arr, prop) => {
   let propArray = [];
-  for (let i = 0; i < arr.length; i++) {
-    let arrOfKeys = Object.keys(arr[i]);
+  for (let product of products){
+    let arrOfKeys = Object.keys(product);
     if (!arrOfKeys.includes(prop)) {
       return propArray;
     }
-    propArray.push(arr[i][prop]);
+    propArray.push(product[prop]);
   }
   return propArray;
 };

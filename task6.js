@@ -7,11 +7,11 @@ const products = [
 
 const calculateTotalPrice = (arr, productName) => {
   let totalPrice = 0;
-  for (let i = 0; i < arr.length; i++) {
-    const objValues = Object.values(arr[i]);
+  for (let product of products) {
+    const objValues = Object.values(product);
     for (let value of objValues) {
       if (productName === value) {
-        totalPrice = arr[i].price * arr[i].quantity;
+        totalPrice = product.price * product.quantity;
         return totalPrice;
       }
     }
